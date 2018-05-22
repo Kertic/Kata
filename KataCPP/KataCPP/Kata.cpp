@@ -46,10 +46,10 @@ int Kata::FindOutlier(std::vector<int> arr) {
 std::string Kata::get_middle(std::string input) {
 	return (input.size() % 2 == 0) ? std::string(&input[input.size() / 2 - 1], 2) : std::string(&input[input.size() / 2], 1);
 }
-int Kata::findDigit(int num, int nth){
+int Kata::findDigit(int num, int nth) {
 	if (nth < 1)
 		return -1;
-	return (int)(abs(num) % (int)(powl(10,nth)) / powl(10,nth-1));
+	return (int)(abs(num) % (int)(powl(10, nth)) / powl(10, nth - 1));
 
 }
 std::vector<int> Kata::xbonacci(std::vector<int> signature, int n)
@@ -93,7 +93,7 @@ std::string Kata::highestScoringWord(const std::string & str)
 {
 	std::vector<std::string> words;
 	std::string currentWord;
-	for (int i = 0; i < str.size(); i++)
+	for (unsigned int i = 0; i < str.size(); i++)
 	{
 		if (str[i] == ' ') {
 			words.push_back(currentWord);
@@ -107,10 +107,10 @@ std::string Kata::highestScoringWord(const std::string & str)
 	words.push_back(currentWord);
 	int highestScore = 0;
 	int hsIndex = 0;
-	for (int curWord = 0; curWord < words.size(); curWord++)
+	for (unsigned int curWord = 0; curWord < words.size(); curWord++)
 	{
 		int wordScore = 0;
-		for (int curLetter = 0; curLetter < words[curWord].size(); curLetter++)
+		for (unsigned int curLetter = 0; curLetter < words[curWord].size(); curLetter++)
 		{
 			wordScore += (int)words[curWord][curLetter];
 		}
@@ -121,5 +121,26 @@ std::string Kata::highestScoringWord(const std::string & str)
 	}
 
 	return std::string(words[hsIndex]);
+}
+unsigned long long int Kata::Fib(unsigned long long int num)
+{
+	if (num <= 1) {
+		if (DiscoveredFibs.size() < num)
+			DiscoveredFibs.push_back(num);
+		return num;
+	}
+
+	if (DiscoveredFibs.size() < num)
+		DiscoveredFibs.push_back(Fib(num - 2) + Fib(num - 1));
+
+	return DiscoveredFibs[num - 1];
+
+}
+unsigned long long int Kata::slowFib(unsigned long long int num)
+{
+	if (num <= 1)
+		return num;
+
+	return slowFib(num - 2) + slowFib(num - 1);
 }
 

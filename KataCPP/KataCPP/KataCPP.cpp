@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "Kata.h"
-
+#define FIBAMT 100
 
 int main()
 {
@@ -21,6 +21,13 @@ int main()
 
 	Kata::chessBoardCellColor("A1", "B2");
 	Kata::highestScoringWord("what time are we climbing up the volcano");
+	Kata katerino; 
+	unsigned long long int fibs[FIBAMT];
+	for (unsigned long long int i = 0; i < FIBAMT; i++)
+	{
+		fibs[i] = katerino.Fib(i);
+	}
+
 	return 0;
 }
 
