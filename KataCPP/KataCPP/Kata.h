@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <math.h>
+#define ULLINT_MAX 18446744073709551615
 class Kata
 {
 public:

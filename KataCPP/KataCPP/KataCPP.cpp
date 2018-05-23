@@ -5,6 +5,7 @@
 #include "Kata.h"
 #define FIBAMT 100
 
+
 int main()
 {
 	//Kata::FindOutlier({});
