@@ -29,6 +29,10 @@ int main()
 		fibs[i] = katerino.Fib(i);
 	}
 
+	char char1 = '1';
+	int char1i = char1 - '0';
+	char char2 = char1i + '0';
+
 	return 0;
 }
 
